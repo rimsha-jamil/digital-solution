@@ -37,32 +37,115 @@ const industries = [
   "Startup Digital Marketing",
   "Startup Digital Marketing",
 ];
+import { Diamond } from "lucide-react";
 
-const Industries = () => {
+export default function Industries() {
   return (
-    <section className="min-h-screen bg-black text-white flex flex-col items-center px-6 py-16">
-      {/* Heading */}
-      <div className="text-center max-w-3xl mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Industries We Work With
-        </h2>
-        <p className="text-gray-300 text-sm md:text-base">
-          At Bizi, we extend our Digital Marketing Agency expertise across a
-          diverse range of industries, tailoring strategies to meet the unique
-          demands and opportunities each sector presents.
-        </p>
-      </div>
+    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 flex items-center justify-center p-8">
+      {/* Background overlay for depth */}
+      <div className="absolute inset-0 bg-black/20" />
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
-        {industries.map((industry, index) => {
-          // Insert cube image at a specific spot (example after 8th item)
-          if (index === 8) {
-            return (
-              <div
-                key="cube"
-                className="col-span-2 col-start-2 row-span-4 flex items-center justify-center"
-              >
+      <div className="relative z-10 max-w-7xl mx-auto text-center">
+        {/* Header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Industries We Work With
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+            At Blitz, we extend our Digital Marketing Agency expertise across a
+            diverse range of industries, tailoring strategies to meet the unique
+            demands and opportunities each sector presents.
+          </p>
+        </div>
+
+        <div className="relative grid grid-cols-12 gap-4 items-center justify-items-center max-w-5xl mx-auto">
+          {/* Top 3 rows - spanning full width */}
+          <div className="col-span-12 grid grid-cols-4 gap-4 mb-4">
+            {Array(4)
+              .fill("Electrician Digital Marketing")
+              .map((text, index) => (
+                <div
+                  key={`top-3-${index}`}
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                >
+                  <div className="flex items-center justify-center h-full">
+                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <span className="text-white text-xs font-medium leading-tight">
+                      {text}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+          </div>
+
+          <div className="col-span-12 grid grid-cols-4 gap-4 mb-4">
+            {Array(4)
+              .fill("Electrician Digital Marketing")
+              .map((text, index) => (
+                <div
+                  key={`top-2-${index}`}
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                >
+                  <div className="flex items-center justify-center h-full">
+                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <span className="text-white text-xs font-medium leading-tight">
+                      {text}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+          </div>
+
+          <div className="col-span-12 grid grid-cols-4 gap-4 mb-8">
+            {Array(4)
+              .fill("Electrician Digital Marketing")
+              .map((text, index) => (
+                <div
+                  key={`top-1-${index}`}
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                >
+                  <div className="flex items-center justify-center h-full">
+                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <span className="text-white text-xs font-medium leading-tight">
+                      {text}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+          </div>
+
+          {/* Middle section with left column, center cube, right column */}
+          {/* Left Column */}
+          <div className="col-span-3 flex flex-col gap-4">
+            {Array(8)
+              .fill("Electrician Digital Marketing")
+              .map((text, index) => (
+                <div
+                  key={`left-${index}`}
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                >
+                  <div className="flex items-center justify-start h-full">
+                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <span className="text-white text-xs font-medium leading-tight">
+                      {text}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+          </div>
+
+          {/* Central 3D Cube */}
+          <div className="col-span-6 flex justify-center">
+            <div className="relative">
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-400/30 to-orange-500/30 rounded-2xl blur-xl scale-150" />
+
+              {/* Cube container */}
+              <div className="relative w-32 h-32 md:w-40 md:h-40">
                 <Image
                   src="/images/dice.svg" // put your cube image in /public/cube.png
                   alt="Cube"
@@ -71,20 +154,96 @@ const Industries = () => {
                   className="drop-shadow-[0_0_25px_rgba(255,200,0,0.5)]"
                 />
               </div>
-            );
-          }
 
-          // Normal industry item
-          return (
-            <div key={index} className="flex items-center gap-2">
-              <div className="w-3 h-3 bg-yellow-500 rotate-45"></div>
-              <span className="text-sm md:text-base">{industry}</span>
+              {/* Additional lighting effects */}
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-amber-300/20 rounded-full blur-2xl" />
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-24 h-8 bg-amber-500/10 rounded-full blur-xl" />
             </div>
-          );
-        })}
+          </div>
+
+          {/* Right Column */}
+          <div className="col-span-3 flex flex-col gap-4">
+            {Array(8)
+              .fill("Electrician Digital Marketing")
+              .map((text, index) => (
+                <div
+                  key={`right-${index}`}
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                >
+                  <div className="flex items-center justify-start h-full">
+                    <span className="text-white text-xs font-medium leading-tight mr-2">
+                      {text}
+                    </span>
+                    <Diamond className="w-4 h-4 text-amber-400 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                  </div>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+          </div>
+
+          {/* Bottom 3 rows - spanning full width */}
+          <div className="col-span-12 grid grid-cols-4 gap-4 mt-8">
+            {Array(4)
+              .fill("Electrician Digital Marketing")
+              .map((text, index) => (
+                <div
+                  key={`bottom-1-${index}`}
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                >
+                  <div className="flex items-center justify-center h-full">
+                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <span className="text-white text-xs font-medium leading-tight">
+                      {text}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+          </div>
+
+          <div className="col-span-12 grid grid-cols-4 gap-4 mt-4">
+            {Array(4)
+              .fill("Electrician Digital Marketing")
+              .map((text, index) => (
+                <div
+                  key={`bottom-2-${index}`}
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                >
+                  <div className="flex items-center justify-center h-full">
+                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <span className="text-white text-xs font-medium leading-tight">
+                      {text}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+          </div>
+
+          <div className="col-span-12 grid grid-cols-4 gap-4 mt-4">
+            {Array(4)
+              .fill("Electrician Digital Marketing")
+              .map((text, index) => (
+                <div
+                  key={`bottom-3-${index}`}
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                >
+                  <div className="flex items-center justify-center h-full">
+                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <span className="text-white text-xs font-medium leading-tight">
+                      {text}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+          </div>
+        </div>
+
+        {/* Additional atmospheric effects */}
+        <div className="absolute top-20 left-20 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl" />
       </div>
     </section>
   );
-};
-
-export default Industries;
+}

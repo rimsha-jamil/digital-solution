@@ -62,11 +62,14 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="relative bg-bg py-20 px-6 text-center text-white overflow-hidden">
-      {/* Glow background */}
-      <div className="absolute inset-0 flex justify-center items-center">
-        <div className="w-[900px] h-[900px] rounded-full bg-gradient-to-b from-yellow-500/40 to-transparent blur-3xl opacity-40"></div>
-      </div>
+    <section className="relative bg-black py-20 px-6 text-center text-white overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/images/globebg.svg"
+        alt="Background"
+        fill
+        className="object-cover object-center "
+      />
 
       {/* Heading */}
       <div className="relative z-10 mb-16">
@@ -78,9 +81,8 @@ export default function ServicesSection() {
           <span className="text-white">Digital Solutions</span>
         </h2>
       </div>
-
       {/* Services Grid */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto my-auto">
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
         {services.map((service, index) => (
           <div
             key={index}

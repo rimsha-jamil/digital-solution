@@ -30,6 +30,15 @@ export default function Hero() {
         <Image src="/images/lollapaloza.svg" alt="LP" width={50} height={50} />
         <Image src="/images/magiceden.svg" alt="Magic" width={50} height={50} />
       </div>
+      <div className="flex items-center justify-center">
+        <Image
+          src="/images/globe.svg"
+          alt=""
+          width={700}
+          height={700}
+          className="mx-auto"
+        />
+      </div>
     </section>
   );
 }

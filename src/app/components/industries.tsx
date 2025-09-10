@@ -1,182 +1,90 @@
-"use client";
+// app/industries/page.tsx
 import React from "react";
 import Image from "next/image";
 
 const industries = [
   "Electrician Digital Marketing",
   "Plumber Digital Marketing",
-  "Dentist Digital Marketing",
-  "Lawyer Digital Marketing",
   "Real Estate Digital Marketing",
-  "Restaurant Digital Marketing",
-  "Gym & Fitness Digital Marketing",
-  "Education Digital Marketing",
   "Healthcare Digital Marketing",
-  "Salon & Spa Digital Marketing",
   "E-commerce Digital Marketing",
-  "Travel & Tourism Digital Marketing",
-  "Fashion & Apparel Digital Marketing",
-  "Jewelry Digital Marketing",
-  "IT & Software Digital Marketing",
-  "Automobile Digital Marketing",
-  "Interior Design Digital Marketing",
+  "Education Digital Marketing",
+  "Law Firm Digital Marketing",
+  "Restaurant Digital Marketing",
   "Construction Digital Marketing",
-  "Photography Digital Marketing",
-  "Food & Beverage Digital Marketing",
-  "Event Management Digital Marketing",
+  "Travel & Tourism Digital Marketing",
+  "Fitness & Gym Digital Marketing",
+  "Finance Digital Marketing",
+  "IT Services Digital Marketing",
+  "Automotive Digital Marketing",
+  "Beauty & Salon Digital Marketing",
+  "Entertainment Digital Marketing",
+  "Hospitality Digital Marketing",
   "NGO Digital Marketing",
-  "Media & Entertainment Digital Marketing",
-  "Sports & Fitness Digital Marketing",
-  "Sports & Fitness Digital Marketing",
-  "Sports & Fitness Digital Marketing",
-  "Sports & Fitness Digital Marketing",
-  "Sports & Fitness Digital Marketing",
-  "Sports & Fitness Digital Marketing",
-  "Sports & Fitness Digital Marketing",
-  "Sports & Fitness Digital Marketing",
+  "Retail Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
+  "Startup Digital Marketing",
 ];
 
-const cols = 4;
-const cubeColSpan = 2;
-const cubeRowSpan = 3;
-
-// choose rows so there is enough space for industries around the cube
-const rows = Math.max(
-  5,
-  Math.ceil((industries.length + cubeColSpan * cubeRowSpan) / cols)
-);
-
-const cubeRowStart = Math.floor((rows - cubeRowSpan) / 2) + 1; // centered
-
-export default function Industries() {
-  // build grid positions (row-major), but skip cells occupied by the cube
-  const positions: { row: number; col: number }[] = [];
-  for (let r = 1; r <= rows; r++) {
-    for (let c = 1; c <= cols; c++) {
-      const inCubeRows = r >= cubeRowStart && r < cubeRowStart + cubeRowSpan;
-      const inCubeCols = c >= 2 && c <= 3; // middle two columns reserved for cube
-      if (inCubeRows && inCubeCols) continue; // skip central cube cells
-      positions.push({ row: r, col: c });
-    }
-  }
-
-  // place industries sequentially into the available grid cells
-  const placed = positions.slice(0, industries.length).map((pos, i) => ({
-    ...pos,
-    text: industries[i],
-  }));
-
-  const renderLabel = (text: string) => {
-    // force last word (usually "Marketing") on a new line
-    const idx = text.lastIndexOf(" ");
-    if (idx === -1) return <span>{text}</span>;
-    const first = text.slice(0, idx);
-    const last = text.slice(idx + 1);
-    return (
-      <span className="text-gray-300 text-sm leading-tight w-40 whitespace-pre-line text-left">
-        {first}
-        <br />
-        {last}
-      </span>
-    );
-  };
-
+const Industries = () => {
   return (
-    <section className="bg-black text-white py-20">
-      {/* Title */}
-      <div className="text-center mb-12 px-4">
-        <h2 className="text-4xl font-semibold">Industries We Work With</h2>
-        <p className="text-gray-400 mt-4 max-w-3xl mx-auto text-sm">
-          At ADS, we extend our Digital Marketing Agency expertise across a
+    <section className="min-h-screen bg-black text-white flex flex-col items-center px-6 py-16">
+      {/* Heading */}
+      <div className="text-center max-w-3xl mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Industries We Work With
+        </h2>
+        <p className="text-gray-300 text-sm md:text-base">
+          At Bizi, we extend our Digital Marketing Agency expertise across a
           diverse range of industries, tailoring strategies to meet the unique
           demands and opportunities each sector presents.
         </p>
       </div>
 
-      {/* Grid container */}
-      <div
-        className="container mx-auto"
-        style={{
-          display: "grid",
-          gridTemplateColumns: `repeat(${cols}, minmax(0,1fr))`,
-          gridTemplateRows: `repeat(${rows}, auto)`,
-          gap: "1.25rem",
-          alignItems: "start",
-        }}
-      >
-        {/* Render industry cells */}
-        {placed.map((p, i) => {
-          const isLeftCol = p.col === 1;
-          const isRightCol = p.col === cols;
-          const isCenterCol = p.col === 2 || p.col === 3;
-
-          const cellStyle = {
-            gridColumn: `${p.col}`,
-            gridRow: `${p.row}`,
-          } as React.CSSProperties;
-
-          // left-most: text right-aligned + diamond on right
-          if (isLeftCol) {
+      {/* Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+        {industries.map((industry, index) => {
+          // Insert cube image at a specific spot (example after 8th item)
+          if (index === 8) {
             return (
               <div
-                key={i}
-                style={cellStyle}
-                className="flex items-start justify-end gap-3 pr-4"
+                key="cube"
+                className="col-span-2 col-start-2 row-span-4 flex items-center justify-center"
               >
-                {/*
-                  text first (right-aligned), diamond after it (on the right).
-                  We put text in a right-aligned container so line-break looks like Figma.
-                */}
-                <div className="text-right">{renderLabel(p.text)}</div>
-                <div className="w-3 h-3 bg-yellow-500 rotate-45 mt-1" />
+                <Image
+                  src="/images/dice.svg" // put your cube image in /public/cube.png
+                  alt="Cube"
+                  width={220}
+                  height={220}
+                  className="drop-shadow-[0_0_25px_rgba(255,200,0,0.5)]"
+                />
               </div>
             );
           }
 
-          // right-most: diamond then text (left aligned)
-          if (isRightCol) {
-            return (
-              <div
-                key={i}
-                style={cellStyle}
-                className="flex items-start gap-3 pl-4"
-              >
-                <div className="w-3 h-3 bg-yellow-500 rotate-45 mt-1" />
-                <div className="text-start">{renderLabel(p.text)}</div>
-              </div>
-            );
-          }
-
-          // center columns (above/below cube): center align (diamond left)
+          // Normal industry item
           return (
-            <div
-              key={i}
-              style={cellStyle}
-              className="flex items-start justify-center gap-3"
-            >
-              <div className="w-3 h-3 bg-yellow-500 rotate-45 mt-1" />
-              <div className="text-start">{renderLabel(p.text)}</div>
+            <div key={index} className="flex items-center gap-2">
+              <div className="w-3 h-3 bg-yellow-500 rotate-45"></div>
+              <span className="text-sm md:text-base">{industry}</span>
             </div>
           );
         })}
-
-        {/* Cube - occupies middle two columns and cubeRowSpan rows */}
-        <div
-          style={{
-            gridColumn: `2`, // just column 3
-            gridRow: `${cubeRowStart} / span ${cubeRowSpan}`, // still center vertically
-          }}
-          className="flex items-center justify-center"
-        >
-          <Image
-            src="/images/dice.svg"
-            alt="Cube"
-            width={250}
-            height={250}
-            className="object-contain"
-          />
-        </div>
       </div>
     </section>
   );
-}
+};
+
+export default Industries;

@@ -77,7 +77,7 @@ export default function ServicesSection() {
           Leading digital marketing Firm.
         </h3>
         <h2 className="text-4xl md:text-5xl font-extrabold">
-          <span className="text-yellow-400">Appoint</span>{" "}
+          <span className="text-primary">Appoint</span>{" "}
           <span className="text-white">Digital Solutions</span>
         </h2>
       </div>

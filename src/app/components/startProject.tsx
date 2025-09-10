@@ -14,7 +14,7 @@ export default function StartProject() {
 
           {/* Paragraph */}
           <p className="text-gray-700 text-base leading-relaxed mb-12 max-w-md">
-            Do you have a digital marketing objective you’d like to achieve? Are
+            Do you have a digital marketing objective you like to achieve? Are
             you ready to find out how Bird can help to build your business
             online? If so, make contact with us today...
           </p>
@@ -84,7 +84,7 @@ export default function StartProject() {
             </div>
 
             {/* Footer Section */}
-            <div className="relative z-10 bg-yellow-500 text-black px-8 py-3 font-semibold">
+            <div className="relative z-10 bg-primary text-black px-8 py-3 font-semibold">
               <div className="grid grid-cols-2 gap-8 mb-6">
                 {/* Left Column */}
                 <div className="space-y-2 text-[8px]">

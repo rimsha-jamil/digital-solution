@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AgencyIntro() {
   return (
-    <section className="relative bg-black text-white py-40 overflow-hidden">
+    <section className="relative bg-black text-white py-30 overflow-hidden">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center pl-20 relative z-10">
         {/* LEFT SIDE */}
         <div className="space-y-6">
@@ -20,14 +20,14 @@ export default function AgencyIntro() {
             innovative approaches.
           </p>
 
-          <h3 className="text-xl font-semibold text-yellow-500">
+          <h3 className="text-xl font-semibold text-primary">
             Enhancing Your Digital Presence
           </h3>
 
           <p className="text-gray-300 text-xs leading-relaxed max-w-lg">
             In the rapidly changing digital environment, having a strong digital
             presence is crucial. Companies around the world recognize the
-            importance of this digital domain, and Bird’s digital marketing
+            importance of this digital domain, and Birds digital marketing
             services are at the forefront of this digital revolution. We
             specialize in boosting the digital profiles of businesses, ensuring
             their success in the online marketplace.
@@ -44,7 +44,7 @@ export default function AgencyIntro() {
         src="/images/globehalf1.svg"
         alt="Globe"
         width={400}
-        height={400}
+        height={300}
         className="absolute right-0 top-0 object-contain "
       />
     </section>

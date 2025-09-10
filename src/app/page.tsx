@@ -2,6 +2,9 @@ import AgencyRole from "./components/agancyRole";
 import AgencyIntro from "./components/agencyIntro";
 import AppointSection from "./components/appointSection";
 import BrandSection from "./components/brandSection";
+import ContactTabs from "./components/contactTab";
+import DigitalSection from "./components/digitalSection";
+import Footer from "./components/footer";
 import Hero from "./components/hero";
 import Industries from "./components/industries";
 import ServicesSection from "./components/serviceSection";
@@ -19,6 +22,10 @@ export default function Home() {
       <Industries />
       <StartProject />
       <AgencyIntro />
+      <AgencyRole />
+      <DigitalSection />
+      <ContactTabs />
+      <Footer />
     </section>
   );
 }

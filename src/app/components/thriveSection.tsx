@@ -24,7 +24,7 @@ export default function ThriveSection() {
               results to every project. As a trusted, full-service digital
               agency, we handle everything from SEO and social media to PPC,
               email marketing, and web development. With our client-focused
-              approach, we’re here to help you succeed in every aspect of your
+              approach, we are here to help you succeed in every aspect of your
               digital journey. Read more about these aspects in detail.
             </p>
           </div>
@@ -46,12 +46,12 @@ export default function ThriveSection() {
                 100% Campaign transparency
               </h3>
               <p className="text-gray-300 text-xs mt-3 mb-4">
-                We’re committed to open and honest communication at every stage.
-                With Appoint Digital, you’ll always know what’s happening with
-                your campaign—no surprises, no guesswork. We keep you informed
-                by sharing regular updates and insights, so you’re always in the
-                loop and in full control of the direction we’re heading.
-                Transparency is our promise to you.
+                We are committed to open and honest communication at every
+                stage. With Appoint Digital, you all always know whats happening
+                with your campaign—no surprises, no guesswork. We keep you
+                informed by sharing regular updates and insights, so you are
+                always in the loop and in full control of the direction we are
+                heading. Transparency is our promise to you.
               </p>
               <button className="bg-primary text-black px-5 py-2 rounded-md font-medium hover:bg-yellow-500 transition">
                 Learn More

@@ -1,6 +1,7 @@
 // app/industries/page.tsx
 import React from "react";
 import Image from "next/image";
+import { FaDiamond } from "react-icons/fa6";
 
 const industries = [
   "Electrician Digital Marketing",
@@ -41,7 +42,7 @@ import { Diamond } from "lucide-react";
 
 export default function Industries() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 flex items-center justify-center p-8">
+    <section className="relative min-h-screen bg-bg via-slate-800 to-amber-900 flex items-center justify-center p-8">
       {/* Background overlay for depth */}
       <div className="absolute inset-0 bg-black/20" />
 
@@ -66,10 +67,10 @@ export default function Industries() {
               .map((text, index) => (
                 <div
                   key={`top-3-${index}`}
-                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm  p-2  "
                 >
                   <div className="flex items-center justify-center h-full">
-                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <FaDiamond className="w-4 h-4 text-primary mr-2  flex-shrink-0" />
                     <span className="text-white text-xs font-medium leading-tight">
                       {text}
                     </span>
@@ -85,10 +86,10 @@ export default function Industries() {
               .map((text, index) => (
                 <div
                   key={`top-2-${index}`}
-                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm "
                 >
                   <div className="flex items-center justify-center h-full">
-                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <FaDiamond className="w-4 h-4 text-primary mr-2" />
                     <span className="text-white text-xs font-medium leading-tight">
                       {text}
                     </span>
@@ -104,10 +105,10 @@ export default function Industries() {
               .map((text, index) => (
                 <div
                   key={`top-1-${index}`}
-                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                  className="group relative w-40 h-12 bg-black/40  "
                 >
                   <div className="flex items-center justify-center h-full">
-                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <FaDiamond className="w-4 h-4 text-primary mr-2" />
                     <span className="text-white text-xs font-medium leading-tight">
                       {text}
                     </span>
@@ -125,15 +126,14 @@ export default function Industries() {
               .map((text, index) => (
                 <div
                   key={`left-${index}`}
-                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                  className="group relative w-40 h-12 bg-black/40 "
                 >
                   <div className="flex items-center justify-start h-full">
-                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <FaDiamond className="w-4 h-4 text-primary mr-2 " />
                     <span className="text-white text-xs font-medium leading-tight">
                       {text}
                     </span>
                   </div>
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               ))}
           </div>
@@ -142,22 +142,19 @@ export default function Industries() {
           <div className="col-span-6 flex justify-center">
             <div className="relative">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-400/30 to-orange-500/30 rounded-2xl blur-xl scale-150" />
 
               {/* Cube container */}
               <div className="relative w-32 h-32 md:w-40 md:h-40">
                 <Image
-                  src="/images/dice.svg" // put your cube image in /public/cube.png
+                  src="/images/dice.svg"
                   alt="Cube"
                   width={220}
-                  height={220}
+                  height={120}
                   className="drop-shadow-[0_0_25px_rgba(255,200,0,0.5)]"
                 />
               </div>
 
               {/* Additional lighting effects */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-amber-300/20 rounded-full blur-2xl" />
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-24 h-8 bg-amber-500/10 rounded-full blur-xl" />
             </div>
           </div>
 
@@ -168,15 +165,14 @@ export default function Industries() {
               .map((text, index) => (
                 <div
                   key={`right-${index}`}
-                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                  className="group relative w-40 h-12 bg-black/40 "
                 >
                   <div className="flex items-center justify-start h-full">
                     <span className="text-white text-xs font-medium leading-tight mr-2">
                       {text}
                     </span>
-                    <Diamond className="w-4 h-4 text-amber-400 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <FaDiamond className="w-4 h-4 text-primary" />
                   </div>
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               ))}
           </div>
@@ -188,10 +184,10 @@ export default function Industries() {
               .map((text, index) => (
                 <div
                   key={`bottom-1-${index}`}
-                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                  className="group relative w-40 h-12 bg-black/40 "
                 >
                   <div className="flex items-center justify-center h-full">
-                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <FaDiamond className="w-4 h-4 text-primary mr-2 " />
                     <span className="text-white text-xs font-medium leading-tight">
                       {text}
                     </span>
@@ -207,15 +203,14 @@ export default function Industries() {
               .map((text, index) => (
                 <div
                   key={`bottom-2-${index}`}
-                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                  className="group relative w-40 h-12 bg-black/40 "
                 >
                   <div className="flex items-center justify-center h-full">
-                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <FaDiamond className="w-4 h-4 text-primary mr-2" />
                     <span className="text-white text-xs font-medium leading-tight">
                       {text}
                     </span>
                   </div>
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               ))}
           </div>
@@ -226,23 +221,18 @@ export default function Industries() {
               .map((text, index) => (
                 <div
                   key={`bottom-3-${index}`}
-                  className="group relative w-40 h-12 bg-black/40 backdrop-blur-sm border border-amber-500/30 rounded-lg p-2 hover:bg-black/60 transition-all duration-300 hover:border-amber-400/50 hover:scale-105"
+                  className="group relative w-40 h-12 bg-black/40 "
                 >
                   <div className="flex items-center justify-center h-full">
-                    <Diamond className="w-4 h-4 text-amber-400 mr-2 group-hover:text-amber-300 transition-colors flex-shrink-0" />
+                    <FaDiamond className="w-4 h-4 text-primary mr-2 " />
                     <span className="text-white text-xs font-medium leading-tight">
                       {text}
                     </span>
                   </div>
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               ))}
           </div>
         </div>
-
-        {/* Additional atmospheric effects */}
-        <div className="absolute top-20 left-20 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-orange-600/5 rounded-full blur-3xl" />
       </div>
     </section>
   );
